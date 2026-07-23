@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Database
+*.db
+*.db-journal
+*.sqlite3
+*.sqlite
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+bot.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Render
+.venv/
+venv/
+ENV/
+
+# Data
+data/*.db
+!data/.gitkeep
