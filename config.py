@@ -4,27 +4,21 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ========== BOT CONFIGURATION ==========
-# ⚠️ IMPORTANT: Token ko secure rakhein!
-# Naya token @BotFather se lena hai (publicly share na karein)
+# Render pe environment variable se token lega
 
-BOT_TOKEN = "8670451173:AAGje06r8DMxafuyaO6QKuLuM8ztG_oc3kA"  # <-- Yahan apna naya token daalein
+BOT_TOKEN = os.getenv("8670451173:AAGje06r8DMxafuyaO6QKuLuM8ztG_oc3kA")  # <-- Render pe set karna hai
 
-ADMIN_IDS = [8603893462]  # Admin ID - @cyber_amit
-
+ADMIN_IDS = [8603893462]
 BOT_NAME = "🛡️ PutNfts Escrow Bot"
-CHANNEL_NAME = "PutNfts"  # @PutNfts
+CHANNEL_NAME = "PutNfts"
 CHANNEL_LINK = "https://t.me/PutNfts"
-
 DEVELOPER = "@cyber_amit"
 DEVELOPER_LINK = "https://t.me/cyber_amit"
 
-# ========== SUPPORTED CURRENCIES ==========
-SUPPORTED_CURRENCIES = ["USD", "INR", "BTC", "ETH", "USDT", "BNB"]
-
 # ========== DATABASE ==========
-DATABASE_PATH = "data/escrow.db"
+# Render pe persistent storage ke liye
+import os
+DATABASE_PATH = os.path.join(os.getcwd(), "data", "escrow.db")
 
-# ========== FEES ==========
-PLATFORM_FEE_PERCENT = 0.5  # 0.5% platform fee
-MIN_DEAL_AMOUNT = 1.0
-MAX_DEAL_AMOUNT = 100000.0
+# Ensure data directory exists
+os.makedirs(os.path.dirname(DATABASE_PATH), exist_ok=True)
