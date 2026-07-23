@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: putnfts-escrow-bot
+    runtime: python
+    repo: https://github.com/cyberamit/PutNfts-Escrow-Bot
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.10.0
+    buildCommand: pip install -r requirements.txt
+    startCommand: python src/bot.py
+    autoDeploy: true
